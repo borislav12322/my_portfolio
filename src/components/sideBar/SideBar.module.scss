@@ -1,0 +1,49 @@
+.sidebar {
+    height: 100vh;
+    width: 400px;
+    background: #191d2b;
+    border-right: 1px solid #2e344e;
+
+    .container {
+        padding: 30px 0px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        
+        
+
+        .top {
+            border-bottom: 1px solid #2e344e;
+            width: 100%;
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            .logo_link {
+                
+            }
+        }
+
+        .menu {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .list {
+                display: flex;
+                flex-direction: column;
+
+                .item {
+                    margin-bottom: 20px;
+
+                    .link {
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
+}
