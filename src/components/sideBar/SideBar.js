@@ -1,36 +1,43 @@
 import s from './SideBar.module.scss';
 import MyAvatar from '../../assets/imgs/sidebar/profile_icon.png'
+import { NavLink } from 'react-router-dom';
 
 function SideBar() {
     return (
-        <aside className={s.sidebar}>
+        <header className={s.sidebar}>
             <div className={s.container}>
                 <div className={s.top}>
-                    <a href="/home" className={s.logo_link}>
-                        <img className={s.logo} src={MyAvatar} alt="avatar"/>
-                    </a>
+                    <NavLink to="/home" className={s.logo_link}>
+                        <img className={s.logo} src={MyAvatar} alt="avatar" />
+                    </NavLink>
                 </div>
                 <nav className={s.menu}>
                     <ul className={s.list}>
                         <li className={s.item}>
-                            <a href="/home" className={s.link}>
+                            <NavLink to="/home" activeClassName={s.active} className={s.link}>
                                 HOME
-                        </a>
+                        </NavLink>
                         </li>
                         <li className={s.item}>
-                            <a href="/about" className={s.link}>
+                            <NavLink to="/about"
+                            activeClassName={s.active}
+                            className={s.link}>
                                 ABOUT
-                            </a>
+                            </NavLink>
                         </li>
                         <li className={s.item}>
-                            <a href="portfolio" className={s.link}>
+                            <NavLink to="portfolio"
+                            activeClassName={s.active}
+                            className={s.link}>
                                 PORTFOLIO
-                        </a>
+                        </NavLink>
                         </li>
                         <li className={s.item}>
-                            <a href="contacts" className={s.link}>
+                            <NavLink to="contacts"
+                            activeClassName={s.active}
+                            className={s.link}>
                                 CONTACTS
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>
@@ -40,7 +47,7 @@ function SideBar() {
                     </small>
                 </div>
             </div>
-        </aside>
+        </header>
     );
 }
 
