@@ -7,14 +7,14 @@ function SideBar() {
         <header className={s.sidebar}>
             <div className={s.container}>
                 <div className={s.top}>
-                    <NavLink to="/home" className={s.logo_link}>
+                    <NavLink to="/" className={s.logo_link}>
                         <img className={s.logo} src={MyAvatar} alt="avatar" />
                     </NavLink>
                 </div>
                 <nav className={s.menu}>
                     <ul className={s.list}>
                         <li className={s.item}>
-                            <NavLink to="/home" activeClassName={s.active} className={s.link}>
+                            <NavLink to="/" exact activeClassName={s.active} className={s.link}>
                                 HOME
                         </NavLink>
                         </li>
