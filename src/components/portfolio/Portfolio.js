@@ -27,13 +27,11 @@ function Portfolio(props) {
           <Spring
           from={{opacity: 0}}
           to={{opacity: 1, color: 'red'}}
-          config={{duration: 1000}}
-          >
+          config={{duration: 1000}}>
           {styles =>(
             <animated.h2 style={styles} >
               Portfolios
-            </animated.h2> 
-          )}
+            </animated.h2> )}
             
           </Spring>
           <div className={s.grid_container}>

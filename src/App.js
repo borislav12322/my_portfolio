@@ -4,31 +4,35 @@ import MainPage from './components/mainPage/MainPage';
 import About from './components/about/About';
 import Portfolio from './components/portfolio/Portfolio';
 import Contacts from './components/contacts/Contacts';
-import { Route, Switch } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router';
+import { BrowserRouter as Router, useLocation } from 'react-router-dom';
+import { useTransition, animated } from 'react-spring';
 
 
 
-function App() {
+function App(props) {
+
+
   return (
-    <BrowserRouter>
+    <>
       <div className="App">
-      
-        <Sidebar/>
 
-        <Switch>
-        <Route path='/' exact>
-            <MainPage/>
-          </Route>
+        <Sidebar />
+        <main className="app__container">
+              
+                <Switch>
+                  <Route path='/' exact component={MainPage} />
+                  <Route path='/about' component={About} />
+                  <Route path='/portfolio' component={Portfolio} />
+                  <Route path='/contacts' component={Contacts} />
+                </Switch>
 
-        <Route path='/about' component={About} />
-        <Route path='/portfolio' component={Portfolio} />
-        <Route path='/contacts' component={Contacts} />
-        </Switch>
+          
+        </main>
       </div>
-      
-    </BrowserRouter>
+
+    </>
   );
 }
 
-export default App;
+export default  withRouter(App);
