@@ -5,8 +5,7 @@ import About from './components/about/About';
 import Portfolio from './components/portfolio/Portfolio';
 import Contacts from './components/contacts/Contacts';
 import { Route, Switch, withRouter } from 'react-router';
-import { BrowserRouter as Router, useLocation } from 'react-router-dom';
-import { useTransition, animated } from 'react-spring';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 
@@ -14,25 +13,41 @@ function App(props) {
 
 
   return (
-    <>
+    <Router>
       <div className="App">
 
         <Sidebar />
-        <main className="app__container">
-              
-                <Switch>
-                  <Route path='/' exact component={MainPage} />
-                  <Route path='/about' component={About} />
-                  <Route path='/portfolio' component={Portfolio} />
-                  <Route path='/contacts' component={Contacts} />
-                </Switch>
 
-          
-        </main>
+
+        <Switch>
+          <main className="app__container">
+            {/* <Route path='/' exact component={MainPage} /> */}
+            {/* <Route path='/about' component={About} /> */}
+
+            <Route path="/" exact>
+              {({ match }) => <MainPage show={match !== null} />}
+            </Route>
+            <Route path="/about">
+              {({ match }) => <About show={match !== null} />}
+            </Route>
+            <Route path="/contacts">
+              {({ match }) => <Contacts show={match !== null} />}
+            </Route>
+            <Route path="/portfolio">
+              {({ match }) => <Portfolio show={match !== null} />}
+            </Route>
+
+            {/* <Route path='/portfolio' component={Portfolio} /> */}
+            {/* <Route path='/contacts' component={Contacts} /> */}
+          </main>
+        </Switch>
+
+
+
       </div>
 
-    </>
+    </Router>
   );
 }
 
-export default  withRouter(App);
+export default withRouter(App);

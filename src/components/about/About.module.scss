@@ -1,5 +1,21 @@
 .about{
     height: 100vh;
     width: 100%;
-    background-color: green;
+    background-color: #232741;
+
+
+    
+    .container{
+        display: flex;
+        flex-direction: column;
+        .title_main{
+            color: #FFFFFF;
+        }
+
+        .content{
+            display: flex;
+        }
+    }
+
+
 }
