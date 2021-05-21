@@ -6,6 +6,8 @@ import Particles from 'react-particles-js';
 import { Spring, animated } from 'react-spring';
 import { Transition } from "react-transition-group";
 import { TweenMax } from "gsap/all";
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
 
 const startState = { autoAlpha: 0, y: -50 };
 
@@ -13,20 +15,26 @@ const startState = { autoAlpha: 0, y: -50 };
 
 
 function MainPage(props) {
+
+
+
+
+
+
     return (
         <Transition
-        unmountOnExit
-        in={props.show}
-        timeout={1000}
-        onEnter={node => TweenMax.set(node, startState)}
-        addEndListener={(node, done) => {
-            TweenMax.to(node, 0.5, {
-                autoAlpha: props.show ? 1 : 0,
-                y: props.show ? 0 : 50,
-                onComplete: done
-            });
-        }}
-    >
+            unmountOnExit
+            in={props.show}
+            timeout={1000}
+            onEnter={node => TweenMax.set(node, startState)}
+            addEndListener={(node, done) => {
+                TweenMax.to(node, 0.5, {
+                    autoAlpha: props.show ? 1 : 0,
+                    y: props.show ? 0 : 50,
+                    onComplete: done
+                });
+            }}
+        >
 
 
 
@@ -95,9 +103,9 @@ function MainPage(props) {
                         }} />
                     <h1 className={s.title}>Hi, i am
                 <Spring
-                            from={{ opacity: 0 }}
-                            to={{ opacity: 1, color: 'grey' }}
-                            config={{ duration: 5000 }}>
+                            from={{color: '#FFFFFF' }}
+                            to={{ opacity: 1, color: '#007bff' }}
+                            config={{ duration: 2000 }}>
                             {styles => (
                                 <animated.span style={styles}>
                                     &nbsp;Borislav Izmestiev
@@ -109,24 +117,25 @@ function MainPage(props) {
                 </p>
                     <ul className={s.list__links}>
                         <li className={s.item}>
-                            <a href="" className={s.link}>
-                                <TelegramIcon />
+                            <a href="" className={s.link}>                        
+                                <TelegramIcon className={s.contact__icon}/>
+                                
                             </a>
                         </li>
                         <li className={s.item}>
                             <a href="" className={s.link}>
-                                <GitHubIcon />
+                                <GitHubIcon className={s.contact__icon}/>
                             </a>
                         </li>
                         <li className={s.item}>
                             <a href="" className={s.link}>
-                                <LinkedInIcon />
+                                <LinkedInIcon className={s.contact__icon}/>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            </Transition>
+        </Transition>
     );
 }
 

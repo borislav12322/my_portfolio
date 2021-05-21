@@ -1,7 +1,11 @@
 import React from "react";
 import s from './About.module.scss';
+import ListRow from './listRow/ListRow';
 import { Transition } from "react-transition-group";
 import { TweenMax } from "gsap/all";
+
+
+import Avatar from '../../assets/imgs/about/kisspng-computer-icons-portable-network-graphics-avatar-ic-5ba3c66df14d32.3051789815374598219884.jpg';
 
 const startState = { autoAlpha: 0, y: -50 };
 
@@ -26,12 +30,42 @@ function About(props) {
                         About me
                     </h2>
                     <div className={s.content}>
-                        <img src="../../assets/imgs/sidebar/profile_icon.png" style={{width: "400px"}} alt="" className={s.img} />
+                        <img src={Avatar} alt="" className={s.img} />
                         <div className={s.inner}>
                             <h3 className={s.name_title}>I am Borislav Izmestiev</h3>
                             <p className={s.text_about_me}>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, minus? Tenetur provident adipisci nemo non, sequi voluptatibus saepe quae nam, dolorem nisi pariatur! Eaque ipsam voluptates repellendus mollitia quam enim.
                             </p>
+                            <ul className={s.list}>
+                            <ListRow
+                            keyText='Full Name'
+                            valueText='Borislav Izmestiev'
+                            />
+                            <ListRow
+                            keyText='Age'
+                            valueText='25'
+                            />
+                            <ListRow
+                            keyText='Languages'
+                            valueText='Russian, English'
+                            />
+                            <ListRow
+                            keyText='Freelance'
+                            valueText='Available'
+                            />
+                            <ListRow
+                            keyText='Full Name'
+                            valueText='Borislav Izmestiev'
+                            />
+                            <ListRow
+                            keyText='Full Name'
+                            valueText='Borislav Izmestiev'
+                            />
+                            </ul>
+
+                            <a href="#" className={s.link_cv}>
+                                DOWNLOAD CV
+                            </a>
                         </div>
                     </div>
                 </div>
