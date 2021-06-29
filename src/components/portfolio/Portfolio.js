@@ -15,14 +15,7 @@ import { TweenMax } from "gsap/all";
 
 const startState = { autoAlpha: 0, y: -50 };
 
-
-
-
-
-
 function Portfolio(props) {
-
-
 
   return (
 
@@ -43,10 +36,10 @@ function Portfolio(props) {
         <div className={s.container}>
           <Spring
             from={{ opacity: 0 }}
-            to={{ opacity: 1, color: 'red' }}
-            config={{ duration: 1000 }}>
+            to={{ opacity: 1, color: '#FFFFFF' }}
+            config={{ duration: 2000 }}>
             {styles => (
-              <animated.h2 style={styles} >
+              <animated.h2 style={styles} className={s.title}>
                 Portfolios
               </animated.h2>)}
 
@@ -58,23 +51,23 @@ function Portfolio(props) {
               projectDescription='It is a site about tasty and healthfull drinks'
               projectImage={SmoothieImg} />
             <PortfolioCard
-              projectName='Smoothie Project'
+              projectName='React Shop'
               projectDescription='It is a site about tasty and healthfull drinks'
               projectImage={SmoothieImg} />
             <PortfolioCard
-              projectName='Smoothie Project'
+              projectName='Bootstrap Project'
               projectDescription='It is a site about tasty and healthfull drinks'
               projectImage={SmoothieImg} />
             <PortfolioCard
-              projectName='Smoothie Project'
+              projectName='Helicopter Photo Project'
               projectDescription='It is a site about tasty and healthfull drinks'
               projectImage={SmoothieImg} />
             <PortfolioCard
-              projectName='Smoothie Project'
+              projectName='Arch Project'
               projectDescription='It is a site about tasty and healthfull drinks'
               projectImage={SmoothieImg} />
             <PortfolioCard
-              projectName='Smoothie Project'
+              projectName='Thrivetalk'
               projectDescription='It is a site about tasty and healthfull drinks'
               projectImage={SmoothieImg} />
           </div>

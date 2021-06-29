@@ -6,6 +6,12 @@ function SideBar() {
     return (
         <header className={s.sidebar}>
             <div className={s.container}>
+            
+            
+                <button className={s.mobileBtn}>
+                    
+                </button>
+            
                 <div className={s.top}>
                     <NavLink to="/" className={s.logo_link}>
                         <img className={s.logo} src={MyAvatar} alt="avatar" />
