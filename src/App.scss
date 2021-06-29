@@ -1,0 +1,22 @@
+@import './SASS/basis/fonts';
+@import './SASS/abstracts/vars';
+@import './SASS/abstracts/mixins';
+
+.App {
+  display: flex;
+  height: 100%;
+}
+
+.app__container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: #10121b;
+}
+
+.inner {
+  position: absolute;
+  width: 100%;
+}
+
+

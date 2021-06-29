@@ -2,10 +2,11 @@ import React from "react";
 import s from './About.module.scss';
 import ListRow from './listRow/ListRow';
 import { Transition } from "react-transition-group";
+import { Spring, animated } from 'react-spring';
 import { TweenMax } from "gsap/all";
 
 
-import Avatar from '../../assets/imgs/about/kisspng-computer-icons-portable-network-graphics-avatar-ic-5ba3c66df14d32.3051789815374598219884.jpg';
+import Avatar from '../../assets/imgs/about/free-icon-avatar-855993.png';
 
 const startState = { autoAlpha: 0, y: -50 };
 
@@ -32,35 +33,42 @@ function About(props) {
                     <div className={s.content}>
                         <img src={Avatar} alt="" className={s.img} />
                         <div className={s.inner}>
-                            <h3 className={s.name_title}>I am Borislav Izmestiev</h3>
+
+                            <h3 className={s.name_title}>I am
+                                <Spring
+                                    from={{ color: '#FFFFFF' }}
+                                    to={{ opacity: 1, color: '#007bff' }}
+                                    config={{ duration: 2000 }}>
+                                    {styles => (
+                                        <animated.span style={styles}>
+                                            &nbsp;Borislav Izmestiev
+                                        </animated.span>)}
+                                </Spring>
+                            </h3>
                             <p className={s.text_about_me}>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, minus? Tenetur provident adipisci nemo non, sequi voluptatibus saepe quae nam, dolorem nisi pariatur! Eaque ipsam voluptates repellendus mollitia quam enim.
                             </p>
                             <ul className={s.list}>
-                            <ListRow
-                            keyText='Full Name'
-                            valueText='Borislav Izmestiev'
-                            />
-                            <ListRow
-                            keyText='Age'
-                            valueText='25'
-                            />
-                            <ListRow
-                            keyText='Languages'
-                            valueText='Russian, English'
-                            />
-                            <ListRow
-                            keyText='Freelance'
-                            valueText='Available'
-                            />
-                            <ListRow
-                            keyText='Full Name'
-                            valueText='Borislav Izmestiev'
-                            />
-                            <ListRow
-                            keyText='Full Name'
-                            valueText='Borislav Izmestiev'
-                            />
+                                <ListRow
+                                    keyText='Full Name'
+                                    valueText='Borislav Izmestiev'
+                                    className = {s.rowStyle}
+                                />
+                                <ListRow
+                                    keyText='Age'
+                                    valueText='25'
+                                    className = {s.rowStyle}
+                                />
+                                <ListRow
+                                    keyText='Languages'
+                                    valueText='Russian, English'
+                                    className = {s.rowStyle}
+                                />
+                                <ListRow
+                                    keyText='Freelance'
+                                    valueText='Available'
+                                    className = {s.rowStyle}
+                                />
                             </ul>
 
                             <a href="#" className={s.link_cv}>

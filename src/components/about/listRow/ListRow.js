@@ -1,13 +1,9 @@
 import s from './ListRow.module.scss';
 
-
-
-
 function ListRow(props) {
 
-
     return (
-        <li className={s.item}>
+        <li className={`${s.item} + ${props.className}`}>
             <span className={s.key}>{props.keyText}</span>
             <span className={s.value}>{props.valueText}</span>
         </li>

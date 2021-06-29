@@ -6,20 +6,10 @@ import Particles from 'react-particles-js';
 import { Spring, animated } from 'react-spring';
 import { Transition } from "react-transition-group";
 import { TweenMax } from "gsap/all";
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-
 
 const startState = { autoAlpha: 0, y: -50 };
 
-
-
-
 function MainPage(props) {
-
-
-
-
-
 
     return (
         <Transition
@@ -36,16 +26,13 @@ function MainPage(props) {
             }}
         >
 
-
-
-
             <div className={s.main_page}>
                 <div className={s.container}>
                     <Particles className={s.background}
                         params={{
                             particles: {
                                 number: {
-                                    value: 30,
+                                    value: 20,
                                     density: {
                                         enable: true,
                                         value_area: 800,
@@ -88,18 +75,18 @@ function MainPage(props) {
                                 }
                             },
 
-                            interactivity: {
-                                events: {
-                                    onHover: {
-                                        enable: true,
-                                        mode: "repulse",
-                                    },
-                                    onClick: {
-                                        enable: true,
-                                        mode: 'repulse',
-                                    }
-                                },
-                            },
+                            // interactivity: {
+                            //     events: {
+                            //         onHover: {
+                            //             enable: true,
+                            //             mode: "repulse",
+                            //         },
+                            //         onClick: {
+                            //             enable: true,
+                            //             mode: 'repulse',
+                            //         }
+                            //     },
+                            // },
                         }} />
                     <h1 className={s.title}>Hi, i am
                 <Spring

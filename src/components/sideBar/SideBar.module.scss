@@ -1,8 +1,13 @@
 .sidebar {
+    // display: none;
     height: 100vh;
     width: 400px;
     background: #191d2b;
     border-right: 1px solid #2e344e;
+
+    // @media screen and (min-width: 992px){
+    //     display: block;
+    // }
 
     .container {
         height: 100%;
@@ -43,19 +48,18 @@
                     text-align: center;
                     width: 100%;
 
-                    &:not(:last-child){
-                        margin-bottom: 20px;
-                    }
                     
-
+                    
                     .link {
-                        color: #FFFFFF; 
+                        color: #a4acc4; 
                         width: 100%;
                         display: block;
                         position: relative;
                         z-index: 5;
                         transition: all .4s ease-out;
-                        
+                        font-family: 'Nunito';
+                        letter-spacing: 1px;
+                        padding: 16px 0;
                         
                         &::before{
                             content: '';
@@ -101,7 +105,9 @@
             padding: 20px 0px;
 
             .copyright{
-                color: #FFFFFF;
+                color: #a4acc4;
+                font-family: 'Nunito';
+                font-size: 18px;
             }
         }
     }
