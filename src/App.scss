@@ -5,18 +5,12 @@
 .App {
   display: flex;
   height: 100%;
-}
-
-.app__container {
-  height: 100%;
-  width: 100%;
-  position: relative;
   background-color: #10121b;
 }
 
-.inner {
-  position: absolute;
+.app__container {
   width: 100%;
+  min-height: 100vh;
+  background-color: #10121b;
+  overflow-y: auto;
 }
-
-

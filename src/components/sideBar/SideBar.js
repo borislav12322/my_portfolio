@@ -1,58 +1,24 @@
 import s from './SideBar.module.scss';
 import MyAvatar from '../../assets/imgs/sidebar/profile_icon.png'
 import { NavLink } from 'react-router-dom';
+import {useState} from "react";
+import  Menu  from './menu/Menu';
 
-function SideBar() {
+const SideBar = (active, setActive, props) => {
+    const [information, setInformation] = useState("");
+    const [navigationToggler, setNavigationToggler] = useState(false);
+
+    const handleNavigationToggler = () => {
+        setNavigationToggler(!navigationToggler);
+    }
+
     return (
-        <header className={s.sidebar}>
-            <div className={s.container}>
+        <header className={s.sidebar} className={navigationToggler ? "sidebar active" : "active"}>
+            <button className={s.mobileBtn} onClick={handleNavigationToggler} className={s.mobileBtn}>
+                    <i class="lni lni-menu"></i>
+            </button>
+            <Menu/>
             
-            
-                <button className={s.mobileBtn}>
-                    
-                </button>
-            
-                <div className={s.top}>
-                    <NavLink to="/" className={s.logo_link}>
-                        <img className={s.logo} src={MyAvatar} alt="avatar" />
-                    </NavLink>
-                </div>
-                <nav className={s.menu}>
-                    <ul className={s.list}>
-                        <li className={s.item}>
-                            <NavLink to="/" exact activeClassName={s.active} className={s.link}>
-                                HOME
-                        </NavLink>
-                        </li>
-                        <li className={s.item}>
-                            <NavLink to="/about"
-                            activeClassName={s.active}
-                            className={s.link}>
-                                ABOUT
-                            </NavLink>
-                        </li>
-                        <li className={s.item}>
-                            <NavLink to="portfolio"
-                            activeClassName={s.active}
-                            className={s.link}>
-                                PORTFOLIO
-                        </NavLink>
-                        </li>
-                        <li className={s.item}>
-                            <NavLink to="contacts"
-                            activeClassName={s.active}
-                            className={s.link}>
-                                CONTACTS
-                            </NavLink>
-                        </li>
-                    </ul>
-                </nav>
-                <div className={s.bottom}>
-                    <small className={s.copyright}>
-                        © 2021 Borislav Izmestiev
-                    </small>
-                </div>
-            </div>
         </header>
     );
 }

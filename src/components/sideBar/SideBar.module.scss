@@ -1,127 +1,53 @@
+@import '../../SASS/abstracts/vars';
+@import '../../SASS/abstracts/mixins';
+@import '../../SASS/basis/fonts';
+
 .sidebar {
-    // display: none;
     height: 100vh;
     width: 400px;
     background: #191d2b;
     border-right: 1px solid #2e344e;
-    position: relative;
+    position: fixed;
+    z-index: 9999999999999999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: all 1s ease-in-out;
 
-    // @media screen and (min-width: 992px){
-    //     display: block;
-    // }
-
-    .container {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-
-        .mobileBtn{
-            position: absolute;
-            width:50px;
-            height: 50px;
-            border: none;
-            background-color: #191d2b;
-            background-image: url(https://image.flaticon.com/icons/png/512/966/966313.png);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-        }
+    @media screen and (min-width: 768px){
+        position: relative;
+        transform: translateX(0);
         
-        
+    }
+    
+}
 
-        .top {
-            border-bottom: 1px solid #2e344e;
-            width: 100%;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            .logo_link {
-                
-            }
-        }
+.mobileBtn{
+    position: absolute;
+    z-index: 99;
+    top: 20px;
+    left: 100%;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border: 1px solid #2e344e;
+    background-color: #191d2b;
+    color: #FFFFFF;
+    font-family: 'LineIcons';
+    cursor: pointer;
 
-        .menu {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            .list {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-
-                .item {               
-                    display: block;
-                    text-align: center;
-                    width: 100%;
-
-                    
-                    
-                    .link {
-                        color: #a4acc4; 
-                        width: 100%;
-                        display: block;
-                        position: relative;
-                        z-index: 5;
-                        transition: all .4s ease-out;
-                        font-family: 'Nunito';
-                        letter-spacing: 1px;
-                        padding: 16px 0;
-                        
-                        &::before{
-                            content: '';
-                            position: absolute;
-                            background:rgba(#037fff, 0.2);
-                            top: 0;
-                            left: 0;
-                            right: 100%;
-                            height: 100%;
-                            width: 0%;
-                            transition: all .4s ease-out;
-                            z-index: -1;
-                            
-                        }
-                        &:hover{
-                            color: #037fff;
-
-                            &::before{
-                                width: 100%;
-                                
-                            }
-                        }
-                    }
-
-                    .active{
-                        color: #FFFFFF;
-                        background-color: #037fff;
-
-                        &:hover{
-                            color: #FFFFFF;
-                        }
-                        
-                    }
-                }
-            }
-        }
-
-        .bottom{
-            border-top: 1px solid #2e344e;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: 20px 0px;
-
-            .copyright{
-                color: #a4acc4;
-                font-family: 'Nunito';
-                font-size: 18px;
-            }
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+    .lni-menu{
+        &::before{
+            color: #FFFFFF;
         }
     }
+}
+
+.active{
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
 }

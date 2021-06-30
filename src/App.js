@@ -6,24 +6,18 @@ import Portfolio from './components/portfolio/Portfolio';
 import Contacts from './components/contacts/Contacts';
 import { Route, Switch, withRouter } from 'react-router';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { useState } from 'react';
 
 
 
-function App(props) {
-
+function App(props, active, setActive) {
 
   return (
     <Router>
       <div className="App">
-
-        <Sidebar />
-
-
+        <Sidebar/>
         <Switch>
           <main className="app__container">
-            {/* <Route path='/' exact component={MainPage} /> */}
-            {/* <Route path='/about' component={About} /> */}
-
             <Route path="/" exact>
               {({ match }) => <MainPage show={match !== null} />}
             </Route>
@@ -36,16 +30,9 @@ function App(props) {
             <Route path="/portfolio">
               {({ match }) => <Portfolio show={match !== null} />}
             </Route>
-
-            {/* <Route path='/portfolio' component={Portfolio} /> */}
-            {/* <Route path='/contacts' component={Contacts} /> */}
           </main>
         </Switch>
-
-
-
       </div>
-
     </Router>
   );
 }
