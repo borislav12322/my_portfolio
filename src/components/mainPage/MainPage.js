@@ -110,12 +110,12 @@ function MainPage(props) {
                             </a>
                         </li>
                         <li className={s.item}>
-                            <a href="" className={s.link}>
+                            <a href="https://github.com/borislav12322" className={s.link}>
                                 <GitHubIcon className={s.contact__icon}/>
                             </a>
                         </li>
                         <li className={s.item}>
-                            <a href="" className={s.link}>
+                            <a href="https://www.linkedin.com/in/borislav-izmestiev-8b3a60210/" className={s.link}>
                                 <LinkedInIcon className={s.contact__icon}/>
                             </a>
                         </li>

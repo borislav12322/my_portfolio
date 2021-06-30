@@ -9,8 +9,13 @@
 }
 
 .app__container {
+  padding-left: 0;
   width: 100%;
   min-height: 100vh;
   background-color: #10121b;
   overflow-y: auto;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 400px;
+  }
 }

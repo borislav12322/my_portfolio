@@ -10,8 +10,7 @@ import { useState } from 'react';
 
 
 
-function App(props, active, setActive) {
-
+function App() {
   return (
     <Router>
       <div className="App">

@@ -7,16 +7,12 @@ function Menu ({props}){
     return(
         <div className={s.menu}>
             <div className={s.container} >
-                
-            
-            
                 <div className={s.top}>
                     <NavLink to="/" className={s.logo_link}>
                         <img className={s.logo} src={MyAvatar} alt="avatar" />
                     </NavLink>
-                    
                 </div>
-                <nav className={s.menu}>
+                <nav className={s.menu__nav}>
                     <ul className={s.list}>
                         <li className={s.item}>
                             <NavLink to="/" exact activeClassName={s.active} className={s.link}>
