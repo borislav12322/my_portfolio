@@ -1,7 +1,4 @@
 import s from './MainPage.module.scss';
-import TelegramIcon from '@material-ui/icons/Telegram';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import Particles from 'react-particles-js';
 import { Spring, animated } from 'react-spring';
 import { Transition } from "react-transition-group";
@@ -74,23 +71,10 @@ function MainPage(props) {
                                     ]
                                 }
                             },
-
-                            // interactivity: {
-                            //     events: {
-                            //         onHover: {
-                            //             enable: true,
-                            //             mode: "repulse",
-                            //         },
-                            //         onClick: {
-                            //             enable: true,
-                            //             mode: 'repulse',
-                            //         }
-                            //     },
-                            // },
                         }} />
                     <h1 className={s.title}>Hi, i am
-                <Spring
-                            from={{color: '#FFFFFF' }}
+                        <Spring
+                            from={{ color: '#FFFFFF' }}
                             to={{ opacity: 1, color: '#007bff' }}
                             config={{ duration: 2000 }}>
                             {styles => (
@@ -101,22 +85,21 @@ function MainPage(props) {
                     </h1>
                     <p className={s.text}>
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, libero esse similique quibusdam dolore molestiae aut sed veritatis at expedita provident aperiam nesciunt sunt ratione? Modi quas animi ipsam quia?
-                </p>
+                    </p>
                     <ul className={s.list__links}>
                         <li className={s.item}>
-                            <a href="" className={s.link}>                        
-                                <TelegramIcon className={s.contact__icon}/>
-                                
+                            <a href="https://t.me/borislav12322" className={s.link}>
+                                <i class="lni lni-telegram"></i>
                             </a>
                         </li>
                         <li className={s.item}>
                             <a href="https://github.com/borislav12322" className={s.link}>
-                                <GitHubIcon className={s.contact__icon}/>
+                                <i class="lni lni-github"></i>
                             </a>
                         </li>
                         <li className={s.item}>
                             <a href="https://www.linkedin.com/in/borislav-izmestiev-8b3a60210/" className={s.link}>
-                                <LinkedInIcon className={s.contact__icon}/>
+                                <i class="lni lni-linkedin"></i>
                             </a>
                         </li>
                     </ul>

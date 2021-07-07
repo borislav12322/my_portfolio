@@ -37,7 +37,7 @@
             margin-bottom: 15px;
 
             @media screen and (min-width: 704px) {
-                font-size: 60px;
+                font-size: 55px;
             }
         }
 
@@ -57,13 +57,22 @@
 
         .list__links {
             display: flex;
+            align-items: center;
 
             .item {
                 &:not(:last-child) {
-                    margin-right: 14px;
+                    margin-right: 20px;
                 }
 
                 .link {
+                    font-size: 44px;
+                    color: #a4acc4;
+                    transition: all .4s ease-in-out;
+
+                    &:hover{
+                        color: #007bff;
+                        transition: all .4s ease-in-out;
+                    }
 
                     .contact__icon {
                         fill: #FFFFFF;

@@ -28,7 +28,16 @@ function About(props) {
             <div className={s.about}>
                 <div className={s.container}>
                     <h2 className={s.title_main}>
-                        About me
+                        <Spring
+                            from={{ opacity: 0 }}
+                            to={{ opacity: 1, color: '#FFFFFF' }}
+                            config={{ duration: 2000 }}
+                        >
+                            {styles => (
+                                <animated.span style={styles}>
+                                    About me
+                                </animated.span>)}
+                        </Spring>
                     </h2>
                     <div className={s.content}>
                         <img src={Avatar} alt="" className={s.img} />
@@ -52,22 +61,22 @@ function About(props) {
                                 <ListRow
                                     keyText='Full Name'
                                     valueText='Borislav Izmestiev'
-                                    className = {s.rowStyle}
+                                    className={s.rowStyle}
                                 />
                                 <ListRow
                                     keyText='Age'
                                     valueText='25'
-                                    className = {s.rowStyle}
+                                    className={s.rowStyle}
                                 />
                                 <ListRow
                                     keyText='Languages'
                                     valueText='Russian, English'
-                                    className = {s.rowStyle}
+                                    className={s.rowStyle}
                                 />
                                 <ListRow
                                     keyText='Freelance'
                                     valueText='Available'
-                                    className = {s.rowStyle}
+                                    className={s.rowStyle}
                                 />
                             </ul>
 

@@ -1,4 +1,3 @@
-import React, { useRef, useEffect, useState } from 'react';
 import s from './Portfolio.module.scss';
 
 import PortfolioCard from './portfolioCard/PortfolioCard';

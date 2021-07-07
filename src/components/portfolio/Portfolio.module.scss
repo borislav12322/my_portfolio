@@ -8,7 +8,6 @@
         @extend %container;
         display: flex;
         flex-direction: column;
-        padding-top: 50px;
         .title{
             @include font('Nunito', #FFFFFF, 40px);
             margin-bottom: 40px;
