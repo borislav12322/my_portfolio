@@ -5,10 +5,25 @@ import ContactBox from './contactBox/ContactBox';
 import Phone from '../../assets/imgs/contacts/phone.svg';
 import Envelope from '../../assets/imgs/contacts/envelope.svg';
 import Location from '../../assets/imgs/contacts/map-marker.svg';
+import emailjs from 'emailjs-com';
 
 const startState = { autoAlpha: 0, y: -50 };
 
 function Contacts(props) {
+
+  function sendMail(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_om2lvr1', 'template_xw1ircw', e.target, 'user_Ycvxq8LSee4wVXydBk8kF')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+      e.target.reset();
+  }
+
+
   return (
     <Transition
       unmountOnExit
@@ -34,33 +49,33 @@ function Contacts(props) {
               Get in touch
             </h3>
             <div className={s.content}>
-              <form action="" className={s.email__form}>
+              <form action="" className={s.email__form} onSubmit={sendMail} >
                 <div className={s.field}>
                   <label htmlFor="" className={s.field__inscription}>
                     Enter your name*
                   </label>
-                  <input type="text" className={s.input} />
+                  <input type="text" className={s.input} name = "from_name" />
                 </div>
                 <div className={s.field}>
-                  <label htmlFor="" className={s.field__inscription}>
+                  <label htmlFor="" className={s.field__inscription} >
                     Enter your email*
                   </label>
-                  <input type="text" className={s.input} />
+                  <input type="email" className={s.input} name = "email"/>
                 </div>
                 <div className={s.field}>
-                  <label htmlFor="" className={s.field__inscription}>
+                  <label htmlFor="" className={s.field__inscription} >
                     Enter your subject*
                   </label>
-                  <input type="text" className={s.input} />
+                  <input type="text" className={s.input} name = "subject"/>
                 </div>
                 <div className={s.field}>
                   <label htmlFor="" className={s.field__inscription}>
                     Enter your Message*
                   </label>
-                  <textarea className={s.textarea} name="" id="" cols="30" rows="10"></textarea>
+                  <textarea className={s.textarea} name="" id="" cols="30" rows="10" name = "message" ></textarea>
                 </div>
-                <button className={s.form__btn}>
-                  SEND MAIL
+                <button type = "submit" className={s.form__btn} value = "Send Message">
+                Send Message
                 </button>
               </form>
               <div className={s.contact__box}>

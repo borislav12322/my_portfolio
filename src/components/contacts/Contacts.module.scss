@@ -74,6 +74,7 @@
                 .form__btn {
                     position: relative;
                     @include font('Nunito', #FFFFFF, 18px);
+                    text-transform: uppercase;
                     background-color: #007bff;
                     min-height: 50px;
                     line-height: 50px;

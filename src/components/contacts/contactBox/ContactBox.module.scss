@@ -2,32 +2,54 @@
 @import '../../../SASS/abstracts/mixins';
 
 
-.box{
+.box {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 30px;
     background: #191d2b;
 
-    &:not(:last-child){
+    @media screen and (min-width: 480px) {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    &:not(:last-child) {
         margin-bottom: 30px;
     }
-    .info{
+
+    .info {
         display: flex;
         flex-direction: column;
-        margin-left: 30px;
+        margin-top: 20px;
 
-        .title{
-            @include font('Nunito', #FFFFFF, 18px);
-            margin-bottom: 10px;
+        @media screen and (min-width: 480px) {
+            margin-top: 0;
+            margin-left: 30px;
         }
 
-        .contact__text{
+
+        .title {
+            @include font('Nunito', #FFFFFF, 16px);
+            margin-bottom: 10px;
+
+            @media screen and (min-width: 480px) {
+                font-size: 18px;
+            }
+        }
+
+        .contact__text {
             display: flex;
             flex-direction: column;
 
-            
 
-            .text__row{
-                @include font('Nunito', #a4acc4, 18px);
+
+            .text__row {
+                @include font('Nunito', #a4acc4, 16px);
+
+                @media screen and (min-width: 480px) {
+                    font-size: 18px;
+                }
             }
         }
     }
