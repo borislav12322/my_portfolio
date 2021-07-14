@@ -6,10 +6,49 @@ import Phone from '../../assets/imgs/contacts/phone.svg';
 import Envelope from '../../assets/imgs/contacts/envelope.svg';
 import Location from '../../assets/imgs/contacts/map-marker.svg';
 import emailjs from 'emailjs-com';
+import { useEffect, useState } from 'react';
 
 const startState = { autoAlpha: 0, y: -50 };
 
 function Contacts(props) {
+
+  const [email, setEmail] = useState('');
+  const [name, setPassword] = useState('');
+  const [emailDirty, setEmailDirty] = useState(false);
+  const [nameDirty, setNameDirty] = useState(false);
+  const [emailError, setEmailError] = useState('Email cant be empty');
+  const [nameError, setNameError] = useState('Name cant be empty');
+  const [formValid, setFormValid] = useState(false);
+
+  useEffect(() =>{
+    if(emailError){
+      setFormValid(false)
+    } else{
+      setFormValid(true)
+    }
+  }, [emailError])
+
+  const emailHandler = (e) => {
+    setEmail(e.target.value);
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!re.test(String(e.target.value).toLowerCase())){
+      setEmailError('Incorrect email')
+    } else {
+      setEmailError('')
+    }
+  }
+
+  const blurHandler = (e) => {
+    switch (e.target.name){
+      case 'email':
+        setEmailDirty(true)
+        break
+        case 'from_name':
+        setNameDirty(true)
+        break
+    }
+  }
+
 
   function sendMail(e) {
     e.preventDefault();
@@ -50,31 +89,38 @@ function Contacts(props) {
             </h3>
             <div className={s.content}>
               <form action="" className={s.email__form} onSubmit={sendMail} >
+
                 <div className={s.field}>
                   <label htmlFor="" className={s.field__inscription}>
                     Enter your name*
                   </label>
-                  <input type="text" className={s.input} name = "from_name" />
+                  {(nameDirty && nameError) && <div className = {s.errorMessage} style={{color:'red'}}>{nameError}</div>}
+                  <input onBlur = {e => blurHandler(e)} type="text" className={s.input} name = "from_name" />
                 </div>
+
                 <div className={s.field}>
                   <label htmlFor="" className={s.field__inscription} >
                     Enter your email*
                   </label>
-                  <input type="email" className={s.input} name = "email"/>
+                  {(emailDirty && emailError) && <div className = {s.errorMessage} style={{color:'red'}}>{emailError}</div>}
+                  <input onChange = {e => emailHandler(e)} value = {email} onBlur = {e => blurHandler(e)} type="email" className={s.input} name = "email"/>
                 </div>
+
                 <div className={s.field}>
                   <label htmlFor="" className={s.field__inscription} >
                     Enter your subject*
                   </label>
                   <input type="text" className={s.input} name = "subject"/>
                 </div>
+
                 <div className={s.field}>
                   <label htmlFor="" className={s.field__inscription}>
                     Enter your Message*
                   </label>
                   <textarea className={s.textarea} name="" id="" cols="30" rows="10" name = "message" ></textarea>
                 </div>
-                <button type = "submit" className={s.form__btn} value = "Send Message">
+
+                <button disabled = {!formValid} type = "submit" className={s.form__btn} value = "Send Message">
                 Send Message
                 </button>
               </form>
