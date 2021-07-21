@@ -45,7 +45,7 @@
 
 
             .text__row {
-                @include font('Nunito', #a4acc4, 16px);
+                @include font('Nunito', #a4acc4, 14px);
 
                 @media screen and (min-width: 480px) {
                     font-size: 18px;

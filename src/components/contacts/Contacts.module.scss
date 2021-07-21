@@ -53,9 +53,9 @@
 
                     .errorMessage{
                         position: absolute;
-                        right: 0;
-                        top: 50%;
-                        
+                        right: 10px;
+                        top: 20%;
+                        @include font('Nunito', #FF0000, 14px);
                     }
 
                     .input,
@@ -90,6 +90,7 @@
                     z-index: 1;
                     transition: all .5s ease-out;
                     cursor: pointer;
+                    border: none;
 
                     &:disabled{
                         background-color: #a4acc4;

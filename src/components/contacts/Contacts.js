@@ -13,7 +13,7 @@ const startState = { autoAlpha: 0, y: -50 };
 function Contacts(props) {
 
   const [email, setEmail] = useState('');
-  const [name, setPassword] = useState('');
+  const [name, setName] = useState('');
   const [emailDirty, setEmailDirty] = useState(false);
   const [nameDirty, setNameDirty] = useState(false);
   const [emailError, setEmailError] = useState('Email cant be empty');
@@ -38,6 +38,15 @@ function Contacts(props) {
     }
   }
 
+  const nameHandler = (e) => {
+    setName(e.target.value);
+    if(!e.target.value){
+      setNameError('Please enter your name')
+    } else{
+      setNameError('')
+    }
+  }
+
   const blurHandler = (e) => {
     switch (e.target.name){
       case 'email':
@@ -49,13 +58,12 @@ function Contacts(props) {
     }
   }
 
-
   function sendMail(e) {
     e.preventDefault();
-
     emailjs.sendForm('service_om2lvr1', 'template_xw1ircw', e.target, 'user_Ycvxq8LSee4wVXydBk8kF')
       .then((result) => {
         console.log(result.text);
+        // const succesful = document.createElement();
       }, (error) => {
         console.log(error.text);
       });
@@ -94,16 +102,16 @@ function Contacts(props) {
                   <label htmlFor="" className={s.field__inscription}>
                     Enter your name*
                   </label>
-                  {(nameDirty && nameError) && <div className = {s.errorMessage} style={{color:'red'}}>{nameError}</div>}
-                  <input onBlur = {e => blurHandler(e)} type="text" className={s.input} name = "from_name" />
+                  {(nameDirty && nameError) && <div className = {s.errorMessage}>{nameError}</div>}
+                  <input onChange = {e => nameHandler(e)} onBlur = {e => blurHandler(e)} type="text" className={s.input} name = "from_name" />
                 </div>
 
                 <div className={s.field}>
                   <label htmlFor="" className={s.field__inscription} >
                     Enter your email*
                   </label>
-                  {(emailDirty && emailError) && <div className = {s.errorMessage} style={{color:'red'}}>{emailError}</div>}
-                  <input onChange = {e => emailHandler(e)} value = {email} onBlur = {e => blurHandler(e)} type="email" className={s.input} name = "email"/>
+                  {(emailDirty && emailError) && <div className = {s.errorMessage}>{emailError}</div>}
+                  <input onChange = {e => emailHandler(e)} onBlur = {e => blurHandler(e)} type="email" className={s.input} name = "email"/>
                 </div>
 
                 <div className={s.field}>
