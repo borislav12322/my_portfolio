@@ -7,7 +7,7 @@ function PortfolioCard(props) {
         <div className={s.portfolio_card}>
             <div className={s.img__box}>
                 <img src={props.projectImage} alt={props.alt} className={s.img} />
-                <a href="" className={s.link}>
+                <a href={props.linkPath} className={s.link} target="_blank">
                     <Link/>
                 </a>
             </div>

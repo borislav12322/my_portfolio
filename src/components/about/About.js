@@ -6,7 +6,7 @@ import { Spring, animated } from 'react-spring';
 import { TweenMax } from "gsap/all";
 
 
-import Avatar from '../../assets/imgs/about/free-icon-avatar-855993.png';
+import Avatar from '../../assets/imgs/about/my_photo.jpeg';
 
 const startState = { autoAlpha: 0, y: -50 };
 
@@ -40,7 +40,9 @@ function About(props) {
                         </Spring>
                     </h2>
                     <div className={s.content}>
-                        <img src={Avatar} alt="" className={s.img} />
+                        <div className={s.img__box}>
+                            <img src={Avatar} alt="" className={s.img} />
+                        </div>
                         <div className={s.inner}>
 
                             <h3 className={s.name_title}>I am
@@ -55,7 +57,7 @@ function About(props) {
                                 </Spring>
                             </h3>
                             <p className={s.text_about_me}>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, minus? Tenetur provident adipisci nemo non, sequi voluptatibus saepe quae nam, dolorem nisi pariatur! Eaque ipsam voluptates repellendus mollitia quam enim.
+                            I am a web-developer with experience in creating web-sites (HTML, CSS, JS). I can provide clean and W3C standart code. Also i have interest to learn new technologies. I am ready for full-time or part-time work.
                             </p>
                             <ul className={s.list}>
                                 <ListRow
@@ -80,7 +82,7 @@ function About(props) {
                                 />
                             </ul>
 
-                            <a href="#" className={s.link_cv}>
+                            <a href="https://drive.google.com/file/d/1xJcRsOUwQTuatlXvMZVerG2FBe9mznNM/view?usp=sharing" className={s.link_cv} target="_blank">
                                 DOWNLOAD CV
                             </a>
                         </div>

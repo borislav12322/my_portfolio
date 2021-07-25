@@ -84,7 +84,7 @@ function MainPage(props) {
                         </Spring>
                     </h1>
                     <p className={s.text}>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, libero esse similique quibusdam dolore molestiae aut sed veritatis at expedita provident aperiam nesciunt sunt ratione? Modi quas animi ipsam quia?
+                        I am a web-developer with experience in creating web-sites (HTML, CSS, JS). I can provide clean and W3C standart code. Also i have interest to learn new technologies. I am ready for full-time or part-time work.
                     </p>
                     <ul className={s.list__links}>
                         <li className={s.item}>
