@@ -7,6 +7,7 @@ import Envelope from '../../assets/imgs/contacts/envelope.svg';
 import Location from '../../assets/imgs/contacts/map-marker.svg';
 import emailjs from 'emailjs-com';
 import { useEffect, useState } from 'react';
+import SocialBox from './socialBox/SocialBox';
 
 const startState = { autoAlpha: 0, y: -50 };
 
@@ -14,6 +15,11 @@ function Contacts(props) {
 
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
+  const [subject, setSubject] = useState('');
+  const [subjectDirty, setSubjectDirty] = useState(false);
+  const [subjectError, setSubjectError] = useState('Subject cant be empty');
+  const [textDirty, setTextDirty] = useState(false);
+  const [textError, setTextError] = useState('Message cant be empty');
   const [emailDirty, setEmailDirty] = useState(false);
   const [nameDirty, setNameDirty] = useState(false);
   const [emailError, setEmailError] = useState('Email cant be empty');
@@ -47,14 +53,37 @@ function Contacts(props) {
     }
   }
 
+  const subjectHandler = (e) =>{
+    setSubject(e.target.value);
+    if(!e.target.value){
+      setSubjectError('Please enter subject')
+    } else{
+      setSubjectError('')
+    }
+  }
+
+  const textHandler = (e) =>{
+    setSubject(e.target.value);
+    if(!e.target.value){
+      setTextError('Please enter your message')
+    } else{
+      setTextError('')
+    }
+  }
+
   const blurHandler = (e) => {
     switch (e.target.name){
-      case 'email':
+        case 'email':
         setEmailDirty(true)
         break
         case 'from_name':
         setNameDirty(true)
         break
+        case 'subject':
+        setSubjectDirty(true)
+        break
+        case 'message':
+        setTextDirty(true)
     }
   }
 
@@ -118,14 +147,16 @@ function Contacts(props) {
                   <label htmlFor="" className={s.field__inscription} >
                     Enter your subject*
                   </label>
-                  <input type="text" className={s.input} name = "subject"/>
+                  {(subjectDirty && subjectError) && <div className = {s.errorMessage}>{subjectError}</div>}
+                  <input onChange = {e => subjectHandler(e)} onBlur = {e => blurHandler(e)} type="text" className={s.input} name = "subject"/>
                 </div>
 
                 <div className={s.field}>
                   <label htmlFor="" className={s.field__inscription}>
                     Enter your Message*
                   </label>
-                  <textarea className={s.textarea} name="" id="" cols="30" rows="10" name = "message" ></textarea>
+                  {(textDirty && textError) && <div className = {s.errorMessage}>{textError}</div>}
+                  <textarea onChange = {e => textHandler(e)} onBlur = {e => blurHandler(e)} className={s.textarea} cols="30" rows="10" name = "message" ></textarea>
                 </div>
 
                 <button disabled = {!formValid} type = "submit" className={s.form__btn} value = "Send Message">
@@ -138,6 +169,12 @@ function Contacts(props) {
                 <ContactBox imgLink={Location} titleName='Adress' text__rowOne='Russian Federation, Moscow' />
               </div>
             </div>
+          </div>
+          <div className={s.social}>
+              <SocialBox boxLink='https://github.com/borislav12322' socialTextLink='Github' socialName = 'github' />
+              <SocialBox boxLink='https://www.linkedin.com/in/borislav-izmestiev-8b3a60210/' socialTextLink='LinkedIn' socialName = 'linkedin' />
+              <SocialBox boxLink='https://t.me/borislav12322' socialTextLink='Telegram' socialName = 'telegram' />
+              <SocialBox boxLink='https://vk.com/borislav12322' socialTextLink='VK' socialName = 'vk' />
           </div>
         </div>
       </div>

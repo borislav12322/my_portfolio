@@ -1,0 +1,47 @@
+.box{
+    display: flex;
+    background-color: #191d2b;
+    justify-content: center;
+
+    &::after{
+        content: '';
+        padding-top: 100%;
+    }
+
+    .inner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img__link{
+        font-size: 40px;
+        color: #a4acc4;
+        transition: all .4s ease-in-out;
+
+        &:hover{
+            color: #007bff;
+            transition: all .4s ease-in-out;
+        }
+
+        @media screen and (min-width: 480px) {
+            font-size: 80px;
+        }
+    }
+
+    .social__link{
+        font-size: 20px;
+        font-family: "Nunito";
+        color: #a4acc4;
+        transition: all .4s ease-in-out;
+        @media screen and (min-width: 480px) {
+            font-size: 30px;
+        }
+        &:hover{
+            color: #007bff;
+            transition: all .4s ease-in-out;
+        }
+
+    }
+}

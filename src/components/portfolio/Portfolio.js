@@ -5,13 +5,16 @@ import PortfolioCard from './portfolioCard/PortfolioCard';
 
 
 // Images
-import SmoothieImg from '../../assets/imgs/portfolio/smoothie';
-import LogisticImg from '../../assets/imgs/portfolio/logistic.jpeg'
+import archImg from '../../assets/imgs/portfolio/arch_img.jpeg';
+import LogisticImg from '../../assets/imgs/portfolio/logistic.jpeg';
+import thriveImg from '../../assets/imgs/portfolio/thrive_img.jpeg';
+import helicopter from '../../assets/imgs/portfolio/helicopter_img.jpeg';
+import bootstrap from '../../assets/imgs/portfolio/bootstrap_img.jpeg';
+import shopImg from '../../assets/imgs/portfolio/shop_img.png'
 
 // React_spring
 import { Spring, animated } from 'react-spring';
 
-import { gsap } from 'gsap';
 import { Transition } from "react-transition-group";
 import { TweenMax, TimelineLite, Power3 } from "gsap/all";
 
@@ -20,21 +23,32 @@ const startState = { autoAlpha: 0, y: -50 };
 const boxes = [
   {
     title: 'Transport',
+    link: 'https://borislav12322.github.io/transport_logistic/',
+    img: LogisticImg,
+    description: ''
   },
   {
-    title: 'Shop'
+    title: 'Shop',
+    link: '#',
+    img: shopImg,
   },
   {
-    title: 'Bootstrap'
+    title: 'Bootstrap',
+    link: 'https://bootstrapincrease.netlify.app/',
+    img: bootstrap,
   },
   {
-    title: 'Helicopter Photo'
+    title: 'Helicopter Photo',
+    img: helicopter,
   },
   {
-    title: 'ArchMove'
+    title: 'ArchMove',
+    link: 'https://archmovesite.netlify.app',
+    img: archImg,
   },
   {
-    title: 'Thrive Talk'
+    title: 'Thrive Talk',
+    img: thriveImg,
   },
 ]
 
@@ -98,14 +112,14 @@ function Portfolio(props) {
 
           <div className={s.grid_container} >
             {
-              boxes.map(({ title }) => {
+              boxes.map(({ title, link, img }) => {
                 return (
                   <div key={title} className={s.cardBox}  ref={addToRefs}>
                     <PortfolioCard
                       projectName={title}
                       projectDescription='It is a site about tasty and healthfull drinks'
-                      projectImage={LogisticImg}
-                      linkPath="https://borislav12322.github.io/transport_logistic/" />
+                      projectImage={img}
+                      linkPath={link} />
                   </div>
                 )
               })
