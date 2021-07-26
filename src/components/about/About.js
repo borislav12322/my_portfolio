@@ -4,6 +4,7 @@ import ListRow from './listRow/ListRow';
 import { Transition } from "react-transition-group";
 import { Spring, animated } from 'react-spring';
 import { TweenMax } from "gsap/all";
+import Particles from 'react-particles-js';
 
 
 import Avatar from '../../assets/imgs/about/my_photo.jpeg';
@@ -27,6 +28,58 @@ function About(props) {
         >
             <div className={s.about}>
                 <div className={s.container}>
+                    <Particles className={s.background}
+                        params={{
+                            "particles": {
+                                "number": {
+                                    "value": 160,
+                                    "density": {
+                                        "enable": false
+                                    }
+                                },
+                                "size": {
+                                    "value": 2,
+                                    "random": true,
+                                    "anim": {
+                                        "speed": 4,
+                                        "size_min": 0.3
+                                    }
+                                },
+                                "line_linked": {
+                                    "enable": false
+                                },
+                                "move": {
+                                    "random": true,
+                                    "speed": 1,
+                                    "direction": "top",
+                                    "out_mode": "out"
+                                }
+                            },
+                            "interactivity": {
+                                "events": {
+                                    "onhover": {
+                                        "enable": true,
+                                        "mode": "bubble"
+                                    },
+                                    "onclick": {
+                                        "enable": true,
+                                        "mode": "repulse"
+                                    }
+                                },
+                                "modes": {
+                                    "bubble": {
+                                        "distance": 250,
+                                        "duration": 2,
+                                        "size": 0,
+                                        "opacity": 0
+                                    },
+                                    "repulse": {
+                                        "distance": 400,
+                                        "duration": 4
+                                    }
+                                }
+                            }
+                        }} />
                     <h2 className={s.title_main}>
                         <Spring
                             from={{ opacity: 0 }}
@@ -57,7 +110,7 @@ function About(props) {
                                 </Spring>
                             </h3>
                             <p className={s.text_about_me}>
-                            I am a web-developer with experience in creating web-sites (HTML, CSS, JS). I can provide clean and W3C standart code. Also i have interest to learn new technologies. I am ready for full-time or part-time work.
+                                I am a web-developer with experience in creating web-sites (HTML, CSS, JS). I can provide clean and W3C standart code. Also i have interest to learn new technologies. I am ready for full-time or part-time work.
                             </p>
                             <ul className={s.list}>
                                 <ListRow

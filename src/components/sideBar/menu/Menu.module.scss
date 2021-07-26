@@ -19,6 +19,13 @@
         display: flex;
         justify-content: center;
 
+        @media screen and (min-width:480px) and (max-width:812px) {
+            display: none;
+        }
+        @media screen and (max-width:479px) {
+            display: none;
+        }
+
         a{
             width: 150px;
             height: 150px;

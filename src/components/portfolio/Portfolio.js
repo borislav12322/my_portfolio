@@ -1,8 +1,8 @@
 import s from './Portfolio.module.scss';
-import { useRef, useEffect, useState } from 'react';
+import { useRef } from 'react';
+import Particles from 'react-particles-js';
 
 import PortfolioCard from './portfolioCard/PortfolioCard';
-
 
 // Images
 import archImg from '../../assets/imgs/portfolio/arch_img.jpeg';
@@ -58,16 +58,10 @@ function Portfolio(props) {
   const revealRefs = useRef([]);
   revealRefs.current = [];
 
-  useEffect(() => {  
-    
-
-  }, [])
-
   const addToRefs = (el) => {
-    if (el && !revealRefs.current.includes(el)){
+    if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el)
     }
-    console.log(revealRefs.current);
   }
 
   return (
@@ -84,8 +78,8 @@ function Portfolio(props) {
           onComplete: done
         });
 
-        revealRefs.current.forEach((el)=>{
-          tl.from(el,0.5,{
+        revealRefs.current.forEach((el) => {
+          tl.from(el, 0.5, {
             autoAlpha: 0,
             delay: 0.1,
             stagger: 0.2,
@@ -98,6 +92,41 @@ function Portfolio(props) {
       }}
     >
       <section className={s.portfolio}>
+        <Particles className={s.background}
+          params={{
+            "particles": {
+                "number": {
+                    "value": 160,
+                    "density": {
+                        "enable": false
+                    }
+                },
+                "size": {
+                    "value": 2,
+                    "random": true
+                },
+                "move": {
+                    "direction": "left",
+                    "out_mode": "out"
+                },
+                "line_linked": {
+                    "enable": false
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onclick": {
+                        "enable": true,
+                        "mode": "remove"
+                    }
+                },
+                "modes": {
+                    "remove": {
+                        "particles_nb": 10
+                    }
+                }
+            }
+        }} />
         <div className={s.container}>
           <Spring
             from={{ opacity: 0 }}
@@ -105,7 +134,7 @@ function Portfolio(props) {
             config={{ duration: 2000 }}>
             {styles => (
               <animated.h2 style={styles} className={s.title}>
-                Portfolios
+                Portfolio
               </animated.h2>)}
 
           </Spring>
@@ -114,7 +143,7 @@ function Portfolio(props) {
             {
               boxes.map(({ title, link, img }) => {
                 return (
-                  <div key={title} className={s.cardBox}  ref={addToRefs}>
+                  <div key={title} className={s.cardBox} ref={addToRefs}>
                     <PortfolioCard
                       projectName={title}
                       projectDescription='It is a site about tasty and healthfull drinks'

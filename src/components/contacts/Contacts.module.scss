@@ -13,7 +13,15 @@
         .title {
             @include font('Nunito', #FFFFFF, 40px);
             margin-bottom: 40px;
+            padding-top: 100px;
+            @media screen and (min-width: 1200px) {
+                padding-top: 50px;
+            }
         }
+
+        .form{
+            margin-bottom: 50px;
+        }        
 
         .subtite {
             @include font('Nunito', #FFFFFF, 30px);
@@ -23,12 +31,11 @@
         .content {
             display: flex;
             flex-direction: column;
-            margin-bottom: 80px;
+            
 
             @media screen and (min-width: 1600px) {
                 flex-direction: row;
             }
-
 
             .email__form {
                 width: 100%;
@@ -43,15 +50,6 @@
                     display: flex;
                     flex-direction: column;
                     position: relative;
-
-                    // .textarea{
-                    //     &::placeholder{
-                    //         font-family: 'SF Display UI Regular';
-                    //         color: #a4acc4;
-                    //         font-size: 16px;
-                    //     }
-                    // }
-
                     
                     textarea:focus+label,
                     textarea:not(:placeholder-shown)+label{
@@ -95,15 +93,6 @@
                         left: 20px;
                         transition: 0.2s ease all;
                     }
-
-                    // .field__inscription {
-                    //     padding: 0 10px;
-                    //     @include font('Nunito', #a4acc4, 14px);
-                    //     position: absolute;
-                    //     background-color: #10121b;
-                    //     top: -10px;
-                    //     left: 30px;
-                    // }
 
                     .errorMessage {
                         position: absolute;
@@ -195,6 +184,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
+            padding-bottom: 50px;
 
             @media screen and (min-width: 1600px) {
                 grid-template-columns: repeat(4, 1fr);

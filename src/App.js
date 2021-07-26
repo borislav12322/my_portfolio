@@ -1,4 +1,5 @@
 import './App.scss';
+import React from 'react';
 import Sidebar from './components/sideBar/SideBar';
 import MainPage from './components/mainPage/MainPage';
 import About from './components/about/About';
@@ -15,6 +16,7 @@ function App() {
       <div className="App">
         <Sidebar/>
         <Switch>
+        <React.Fragment>
           <main className="app__container">
             <Route path="/" exact>
               {({ match }) => <MainPage show={match !== null} />}
@@ -29,6 +31,7 @@ function App() {
               {({ match }) => <Portfolio show={match !== null} />}
             </Route>
           </main>
+          </React.Fragment>
         </Switch>
       </div>
     </Router>

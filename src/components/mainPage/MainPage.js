@@ -93,17 +93,17 @@ function MainPage(props) {
                     <ul className={s.list__links}>
                         <li className={s.item}>
                             <a href="https://t.me/borislav12322" className={s.link}>
-                                <i class="lni lni-telegram"></i>
+                                <i className="lni lni-telegram"></i>
                             </a>
                         </li>
                         <li className={s.item}>
                             <a href="https://github.com/borislav12322" className={s.link}>
-                                <i class="lni lni-github"></i>
+                                <i className="lni lni-github"></i>
                             </a>
                         </li>
                         <li className={s.item}>
                             <a href="https://www.linkedin.com/in/borislav-izmestiev-8b3a60210/" className={s.link}>
-                                <i class="lni lni-linkedin"></i>
+                                <i className="lni lni-linkedin"></i>
                             </a>
                         </li>
                     </ul>
