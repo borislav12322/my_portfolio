@@ -1,6 +1,6 @@
 import s from './Menu.module.scss';
 import { NavLink } from 'react-router-dom';
-import MyAvatar from '../../../assets/imgs/sidebar/my_photo.jpeg'
+import MyAvatar from '../../../assets/imgs/sidebar/my_photo.webp'
 
 
 function Menu ({props}){

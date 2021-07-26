@@ -8,15 +8,17 @@ function PortfolioCard(props) {
             <div className={s.img__box}>
                 <img src={props.projectImage} alt={props.alt} className={s.img} />
                 <a href={props.linkPath} className={s.link} target="_blank">
-                    <Link/>
+                    <Link />
                 </a>
             </div>
-            <h3 className={s.title}>
-                {props.projectName}
-            </h3>
-            <span className={s.text}>
-                {props.projectDescription}
-            </span>
+            <div className={s.inner}>
+                <h3 className={s.title}>
+                    {props.projectName}
+                </h3>
+                <span className={s.text}>
+                    {props.projectDescription}
+                </span>
+            </div>
         </div>
     );
 }

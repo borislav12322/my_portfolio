@@ -6,8 +6,7 @@ import { Spring, animated } from 'react-spring';
 import { TweenMax } from "gsap/all";
 import Particles from 'react-particles-js';
 
-
-import Avatar from '../../assets/imgs/about/my_photo.jpeg';
+import AvatarWebP from '../../assets/imgs/about/my_photo.webp'
 
 const startState = { autoAlpha: 0, y: -50 };
 
@@ -28,7 +27,7 @@ function About(props) {
         >
             <div className={s.about}>
                 <div className={s.container}>
-                    <Particles className={s.background}
+                    <Particles canvasClassName={s.background}
                         params={{
                             "particles": {
                                 "number": {
@@ -94,7 +93,7 @@ function About(props) {
                     </h2>
                     <div className={s.content}>
                         <div className={s.img__box}>
-                            <img src={Avatar} alt="" className={s.img} />
+                        <img src={AvatarWebP} alt="myphoto" className={s.img} />
                         </div>
                         <div className={s.inner}>
 

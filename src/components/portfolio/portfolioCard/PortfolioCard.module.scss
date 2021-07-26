@@ -5,7 +5,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    height: 100%;
     
 
     @media screen and (min-width: 768px) {
@@ -14,6 +15,8 @@
 
     .img__box {
         position: relative;
+        overflow: hidden;
+        margin-bottom: 20px;
 
         .link{
             visibility: hidden;
@@ -64,8 +67,21 @@
         }
 
         .img {
-            object-fit: contain;
+            object-fit: cover;
             width: 100%;
+            height: 100%;
+        }
+    }
+
+    .inner{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media screen and (min-width: 768px) {
+        align-items: flex-start;
+            
         }
     }
 

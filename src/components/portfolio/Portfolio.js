@@ -5,18 +5,18 @@ import Particles from 'react-particles-js';
 import PortfolioCard from './portfolioCard/PortfolioCard';
 
 // Images
-import archImg from '../../assets/imgs/portfolio/arch_img.jpeg';
-import LogisticImg from '../../assets/imgs/portfolio/logistic.jpeg';
-import thriveImg from '../../assets/imgs/portfolio/thrive_img.jpeg';
-import helicopter from '../../assets/imgs/portfolio/helicopter_img.jpeg';
-import bootstrap from '../../assets/imgs/portfolio/bootstrap_img.jpeg';
-import shopImg from '../../assets/imgs/portfolio/shop_img.png'
+import archImg from '../../assets/imgs/portfolio/arch_img.webp';
+import LogisticImg from '../../assets/imgs/portfolio/logistic.webp';
+import thriveImg from '../../assets/imgs/portfolio/thrive_img.webp';
+import helicopter from '../../assets/imgs/portfolio/helicopter_img.webp';
+import bootstrap from '../../assets/imgs/portfolio/bootstrap_img.webp';
+import shopImg from '../../assets/imgs/portfolio/shop_img.webp'
 
 // React_spring
 import { Spring, animated } from 'react-spring';
 
 import { Transition } from "react-transition-group";
-import { TweenMax, TimelineLite, Power3 } from "gsap/all";
+import { TweenMax } from "gsap/all";
 
 const startState = { autoAlpha: 0, y: -50 };
 
@@ -53,7 +53,6 @@ const boxes = [
 ]
 
 function Portfolio(props) {
-  let tl = new TimelineLite();
 
   const revealRefs = useRef([]);
   revealRefs.current = [];
@@ -77,26 +76,14 @@ function Portfolio(props) {
           y: props.show ? 0 : 50,
           onComplete: done
         });
-
-        revealRefs.current.forEach((el) => {
-          tl.from(el, 0.5, {
-            autoAlpha: 0,
-            delay: 0.1,
-            stagger: 0.2,
-            y: 50,
-            ease: Power3.easeOut,
-            onComplete: done,
-          })
-        })
-
       }}
     >
       <section className={s.portfolio}>
-        <Particles className={s.background}
+        <Particles canvasClassName	= {s.background}
           params={{
             "particles": {
                 "number": {
-                    "value": 160,
+                    "value": 200,
                     "density": {
                         "enable": false
                     }

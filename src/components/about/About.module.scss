@@ -1,31 +1,41 @@
 @import '../../SASS/abstracts/vars';
 @import '../../SASS/abstracts/mixins';
 
-.about{
+.about {
     width: 100%;
     height: 100%;
     background-color: #10121b;
     position: relative;
 
-    .container{
+    .container {
         @extend %container;
         display: flex;
         flex-direction: column;
 
-        .background {
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            background-color: #10121b;
-        }
-        
+        .background, .tsparticles {
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            display: none;
 
-        .title_main{
+            @media screen and (min-width: 1024px) {
+                display: block;
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                background-color: #10121b;
+            }
+        }
+
+
+        .title_main {
             padding-top: 100px;
             margin-bottom: 40px;
             @include font('Nunito', #FFFFFF, 40px);
@@ -37,7 +47,7 @@
             }
         }
 
-        .content{
+        .content {
             display: flex;
             flex-direction: column;
             padding-bottom: 100px;
@@ -47,51 +57,51 @@
                 padding-bottom: 0;
             }
 
-            .img__box{
+            .img__box {
                 margin-right: 30px;
             }
 
-            .img{
+            .img {
                 position: relative;
                 z-index: 22;
                 width: 100%;
                 object-fit: contain;
             }
 
-            .inner{
+            .inner {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: space-between;
-                
 
-                .name_title{
+
+                .name_title {
                     color: #FFFFFF;
                     @include font('Nunito', #FFFFFF, 40px);
                     margin-bottom: 30px;
                 }
 
-                .text_about_me{
+                .text_about_me {
                     color: #FFFFFF;
                     @include font('Nunito', #a4acc4, 18px);
                     line-height: 30px;
                     margin-bottom: 30px;
                     max-width: 1000px;
                     width: 100%;
-                    
+
                 }
 
-                .list{
+                .list {
                     margin-bottom: 50px;
                 }
 
-                .rowStyle{
+                .rowStyle {
                     margin-bottom: 10px;
                     @include font('Nunito', #a4acc4, 18px);
                 }
             }
 
-            .link_cv{
+            .link_cv {
                 position: relative;
                 @include font('Nunito', #FFFFFF, 18px);
                 background-color: #007bff;
@@ -101,22 +111,23 @@
                 padding: 0px 30px;
                 z-index: 1;
                 transition: all .5s ease-out;
-                &::after{
+
+                &::after {
                     content: '';
                     position: absolute;
                     width: 0%;
                     height: 2px;
-                    background:#FFFFFF;
+                    background: #FFFFFF;
                     bottom: 0;
                     left: 0;
                     z-index: 10;
                     transition: all .5s ease-out;
                 }
 
-                &:hover{
-                    &::after{
+                &:hover {
+                    &::after {
                         width: 100%;
-                        
+
                     }
                 }
             }

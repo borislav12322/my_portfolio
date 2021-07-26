@@ -7,7 +7,16 @@
     overflow-y: auto;
     position: relative;
 
-    .background {
+    .background, .tsparticles {
+        display: none;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+
+        @media screen and (min-width: 1024px) {
+        display: block;
         position: absolute;
         z-index: -1;
         top: 0;
@@ -17,6 +26,8 @@
         height: 100%;
         width: 100%;
         background-color: #10121b;
+        }
+
     }
     .container{
         @extend %container;
