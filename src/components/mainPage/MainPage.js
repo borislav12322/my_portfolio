@@ -3,6 +3,10 @@ import Particles from 'react-particles-js';
 import { Spring, animated } from 'react-spring';
 import { Transition } from "react-transition-group";
 import { TweenMax } from "gsap/all";
+import HTML from '../../assets/imgs/mainPage/html_icon.png';
+import CSS from '../../assets/imgs/mainPage/css_icon.png';
+import React from '../../assets/imgs/mainPage/react_icon.png';
+import JS from '../../assets/imgs/mainPage/js_icon.png';
 
 const startState = { autoAlpha: 0, y: -50 };
 
@@ -64,10 +68,10 @@ function MainPage(props) {
                                 shape: {
                                     type: 'images',
                                     images: [
-                                        { src: 'https://image.flaticon.com/icons/png/512/377/377180.png', height: 300, width: 300 },
-                                        { src: 'https://image.flaticon.com/icons/png/512/377/377176.png', height: 300, width: 300 },
-                                        { src: 'https://image.flaticon.com/icons/png/512/1260/1260667.png', height: 300, width: 300 },
-                                        { src: 'https://image.flaticon.com/icons/png/512/377/377182.png', height: 300, width: 300 },
+                                        { src: HTML, height: 300, width: 300 },
+                                        { src: CSS, height: 300, width: 300 },
+                                        { src: React, height: 300, width: 300 },
+                                        { src: JS, height: 300, width: 300 },
                                     ]
                                 }
                             },

@@ -1,21 +1,19 @@
 import './SideBar.scss';
 import {useState} from "react";
-import  Menu  from './menu/Menu';
+import  MenuMain  from './menu/Menu';
 
-const SideBar = (active, setActive, props) => {
-    
+const SideBar = () => {
     const [navigationToggler, setNavigationToggler] = useState(false);
-    const handleNavigationToggler = () => {
-        setNavigationToggler(!navigationToggler);
-    }
+    const showSidebar = () => setNavigationToggler(!navigationToggler);
 
     return (
-        <header className={navigationToggler ? "sidebar active" : "sidebar"}>
-            <button  onClick={handleNavigationToggler} className='mobileBtn'>
+        <header className={navigationToggler ? "sidebar active" : "sidebar"} onClick={showSidebar} >
+            <button  onClick={showSidebar} className='mobileBtn'>
                     <i className="lni lni-menu"></i>
             </button>
-            <Menu/>         
+            <MenuMain/>
         </header>
+        
     );
 }
 

@@ -128,38 +128,43 @@ function Contacts(props) {
               <form action="" className={s.email__form} onSubmit={sendMail} >
 
                 <div className={s.field}>
+                  
+                  {(nameDirty && nameError) && <div className = {s.errorMessage}>{nameError}</div>}
+                  <input onChange = {e => nameHandler(e)} onBlur = {e => blurHandler(e)} type="text" className={s.input} name = "from_name" placeholder="Enter your name" />
+
                   <label htmlFor="" className={s.field__inscription}>
                     Enter your name*
                   </label>
-                  {(nameDirty && nameError) && <div className = {s.errorMessage}>{nameError}</div>}
-                  <input onChange = {e => nameHandler(e)} onBlur = {e => blurHandler(e)} type="text" className={s.input} name = "from_name" />
                 </div>
 
                 <div className={s.field}>
+                  
+                  {(emailDirty && emailError) && <div className = {s.errorMessage}>{emailError}</div>}
+                  <input onChange = {e => emailHandler(e)} onBlur = {e => blurHandler(e)} type="email" className={s.input} name = "email" placeholder="Enter your email" />
                   <label htmlFor="" className={s.field__inscription} >
                     Enter your email*
                   </label>
-                  {(emailDirty && emailError) && <div className = {s.errorMessage}>{emailError}</div>}
-                  <input onChange = {e => emailHandler(e)} onBlur = {e => blurHandler(e)} type="email" className={s.input} name = "email"/>
                 </div>
 
                 <div className={s.field}>
+                  
+                  {(subjectDirty && subjectError) && <div className = {s.errorMessage}>{subjectError}</div>}
+                  <input onChange = {e => subjectHandler(e)} onBlur = {e => blurHandler(e)} type="text" className={s.input} name = "subject" placeholder="Enter your subject" />
                   <label htmlFor="" className={s.field__inscription} >
                     Enter your subject*
                   </label>
-                  {(subjectDirty && subjectError) && <div className = {s.errorMessage}>{subjectError}</div>}
-                  <input onChange = {e => subjectHandler(e)} onBlur = {e => blurHandler(e)} type="text" className={s.input} name = "subject"/>
                 </div>
 
                 <div className={s.field}>
-                  <label htmlFor="" className={s.field__inscription}>
+                  
+                  {(textDirty && textError) && <div style={{top:'10px'}} className = {s.errorMessage}>{textError}</div>}
+                  <textarea placeholder="Enter your Message*" onChange = {e => textHandler(e)} onBlur = {e => blurHandler(e)} className={s.textarea} cols="30" rows="10" name = "message" />
+                  <label htmlFor="" className={s.textarea_label}>
                     Enter your Message*
                   </label>
-                  {(textDirty && textError) && <div className = {s.errorMessage}>{textError}</div>}
-                  <textarea onChange = {e => textHandler(e)} onBlur = {e => blurHandler(e)} className={s.textarea} cols="30" rows="10" name = "message" ></textarea>
                 </div>
 
-                <button disabled = {!formValid} type = "submit" className={s.form__btn} value = "Send Message">
+                <button disabled = {!formValid} onClick={sendMail} type = "submit" className={s.form__btn} value = "Send Message">
                 Send Message
                 </button>
               </form>
