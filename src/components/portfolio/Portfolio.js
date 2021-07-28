@@ -29,7 +29,6 @@ const boxes = [
   },
   {
     title: 'Shop',
-    link: '#',
     img: shopImg,
   },
   {
@@ -48,6 +47,7 @@ const boxes = [
   },
   {
     title: 'Thrive Talk',
+    link: 'https://thrivetalk.netlify.app/',
     img: thriveImg,
   },
 ]
