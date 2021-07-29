@@ -28,19 +28,6 @@ const boxes = [
     description: ''
   },
   {
-    title: 'Shop',
-    img: shopImg,
-  },
-  {
-    title: 'Bootstrap',
-    link: 'https://bootstrapincrease.netlify.app/',
-    img: bootstrap,
-  },
-  {
-    title: 'Helicopter Photo',
-    img: helicopter,
-  },
-  {
     title: 'ArchMove',
     link: 'https://archmovesite.netlify.app',
     img: archImg,
@@ -49,6 +36,20 @@ const boxes = [
     title: 'Thrive Talk',
     link: 'https://thrivetalk.netlify.app/',
     img: thriveImg,
+  },
+  {
+    title: 'Bootstrap',
+    link: 'https://bootstrapincrease.netlify.app/',
+    img: bootstrap,
+  },
+  {
+    title: 'Shop',
+    img: shopImg,
+  },
+  
+  {
+    title: 'Helicopter Photo',
+    img: helicopter,
   },
 ]
 
